@@ -1,0 +1,69 @@
+{% extends "core\base.html" %}
+
+{% load static %}
+
+{% block title %}{{ creator.title }}{% endblock %}
+
+{% block content %}
+
+<div class="py-20 text-center space-y-12">
+    <figure>
+        <img src="{{ creator.image.url }}"  class="rounded-lg">  
+    </figure>
+
+      <div>
+
+            <h1 class="text-7xl text-slate-300 font-bold ">{{ creator.title }}</h1>
+            <p class="text-xl text-slate-400">{{ creator.description }}
+
+            </p>
+        </div>
+   
+</div>
+
+
+
+<div class="py-12 bg-slate-800 ">
+    
+
+    <div class="px-12 ">
+  
+    <h2 class="mb-12 text-5xl text-slate-300 text-center font-bold"> My Supporters </h2>
+    
+    
+    <p class="text-xl text-slate-400 text-center">
+        Send money to friends and family with ease using Jadespay.
+
+    </p>
+
+    <div class="mt-12 text-center space-x-4 space-y-5">
+        
+
+        
+       <p class=" mt-12 text-xl text-slate-400  text-white space-y-5 text-center">
+        Support me by buying me a coffee. 
+        John@doe.com- One coffee = $1 (February,5 2025) 
+
+       </p>
+
+        <hr>
+ 
+        <p class=" mt-12 text-xl text-slate-400  text-white space-y-5 text-center"> Total amount of coffee bought: $1</p>
+        
+
+       
+
+    </div 
+            
+       
+
+        
+        
+
+   </div>
+   
+</div> 
+   
+{% endblock %}
+       
+   

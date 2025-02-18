@@ -1,0 +1,58 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} |Jadespay</title>
+    
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="bg-slate-700">
+    <nav class="py-8 px-8 flex flex-row items-center justify-between bg-slate-900 text-white">
+      <div> 
+        <a href="{% url 'core:index' %}" class="text-2xl text-white font-bold">Jadespay</a>
+    </div>
+    <div>
+        <a href="{%url 'creator:creators' %}" class="py-4 px-6 text-lg font-bold text-white">Creator</a>
+
+        {% if not request.user.is_authenticated %}
+
+        <a href="{% url 'creator:login' %}" class="py-4 px-6 text-lg font-bold text-white">Log In</a>
+        <a href="{% url 'creator:signup' %}" class="py-4 px-6 text-lg font-bold text-white bg-sky-300 rounded-lg">Sign Up</a>
+
+        {% endif %}
+
+
+        {% if request.user.is_authenticated %}
+         <a href="{% url 'creator:mypage' %}" class="py-4 px-6 text-lg font-bold  bg-sky-800 text-white rounded-lg">My Page</a>
+
+      {% endif %}
+
+    </div>
+
+</nav>
+  
+
+    
+  <header>
+        <h1 class="text-3xl font-bold underline">Welcome to Jadespay</h1>
+    </header>
+
+    <main class="px-6 py-8">
+        {% block content %}
+        {% endblock %}
+        
+
+    </main>
+    <footer class="py-8 px-8 bg-slate-900 text-white text-center">
+        <p class="text-slate-200">&copy; 2025 Jadespay. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
