@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-%z-b76cfdvlu*5x6m^2q%r*!s88)0(i%e&zdyl0p_cd!dfuel%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://jadespay.onrender.com']
 
 LOGIN_URL = 'creator:login'
 
