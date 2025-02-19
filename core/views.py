@@ -1,15 +1,22 @@
+
+
+
+
+    
 from django.shortcuts import render, redirect
 
-# Create your views here.
+from creator.models import Creator
+
 
 def index(request):
-    if request.user.is_authenticated:
-       
-       try:
-           creator = request.user.creator
-       except Exception:
+    creators = Creator.objects.all()
 
-        return redirect( 'creator:edit')
-    
+    if request.user.is_authenticated:
+        try:
+            creator = request.user.creator
+        except Exception:
+            return redirect('creator:edit')
         
-    return render(request, 'core/index.html')
+    return render(request, 'core/index.html', {
+        'creators': creators
+    })

@@ -114,6 +114,36 @@ def edit(request):
 
 
 
+    from django.shortcuts import render, redirect
+
+from creator.models import Creator
+
+# Create your views here.
+
+def index(request):
+    creators = Creator.objects.all()
+    # If user is authenticated, get his/her creator profile, else redirect to creator profile edit page.
+    
+
+   
+    if request.user.is_authenticated:
+       
+        # Get the creator profile associated with the authenticated user.
+       
+       try:
+          creator = request.user.creator
+       except Exception:
+
+          return redirect( 'creator:edit')
+    
+        
+       return render(request, 'core/index.html' , {
+           'creators': creators})
+    
+
+
+
+
 
 
 
