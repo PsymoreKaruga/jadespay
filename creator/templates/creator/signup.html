@@ -14,7 +14,8 @@
 </div>
 
 <div class="px-8 py-12 max-w-lg mx-auto bg-slate-800 text-white p-8 rounded-lg">
-    <form action="{% url 'creator:signup' %}" method="post" class="space-y-6">
+       {# <form action="{% url 'creator:signup' %}" method="post" class="space-y-6">  #} 
+    <form method="post" action="." class="space-y-6"> 
         {% csrf_token %}
         <div class="space-y-4">
             <label for="id_username" class=" text-lg block text-slate-200 text-lg text-blue">Username</label>
